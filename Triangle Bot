@@ -1,0 +1,64 @@
+import becker.robots.City;
+import becker.robots.Direction;
+import becker.robots.Robot; //import the becker library
+
+/**
+ * RobotTask
+ * Gets all the beepers from the triangle 
+
+ */
+
+public class RobotTask {
+
+	/**
+	 * description
+	 * @param none
+	 * @return void
+	 */
+	public void run(){
+
+		//build a city
+		City triangle = new City("U1TriCleanerBot.txt");
+		triangle.showThingCounts(true);
+
+
+		//build a robot in the city square starting at street 4, avenue 1
+		RobotT mo = new RobotT (triangle,8,0,Direction.EAST,100);
+		//mo picks his rows
+		mo.pickRow(6);
+		mo.reWest();
+		mo.pickRow(5);
+		mo.reEast();
+		mo.pickRow(4);
+		mo.reWest();
+		mo.pickRow(3);
+		mo.reEast();
+		mo.pickRow(2);
+		mo.reWest();
+		mo.pickRow(1);
+		mo.reEast();
+		mo.pickRow(0);
+		mo.reWest();
+
+		//mo plants his rows on the opposite side 
+		mo.move5();
+		mo.turnAround();
+		mo.putRow(6);
+		mo.resouthR();
+		mo.putRow(5);
+		mo.resouthL();
+		mo.putRow(4);
+		mo.resouthR();
+		mo.putRow(3);
+		mo.resouthL();
+		mo.putRow(2);
+		mo.resouthR();
+		mo.putRow(1);
+
+
+		System.out.println("finished");
+
+	}
+
+
+}
