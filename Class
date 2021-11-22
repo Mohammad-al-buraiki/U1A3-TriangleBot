@@ -1,0 +1,91 @@
+import becker.robots.City;
+import becker.robots.Direction;
+import becker.robots.Robot;
+import becker.robots.RobotSE;
+
+public class RobotT extends RobotSE {
+
+	public RobotT(City arg0, int arg1, int arg2, Direction arg3, int i) {
+		super(arg0, arg1, arg2, arg3);
+		// TODO Auto-generated constructor stub
+	}
+
+	public void pickRow(int s) {
+		// TODO Auto-generated method stub
+		for (int i =0;i<s;i++) {
+			this.pickThing();
+			this.move();
+			this.move();
+			
+		}
+
+	}
+
+	public void reWest() {
+		// TODO Auto-generated method stub
+		this.pickThing();
+		this.turnLeft();
+		this.move();
+		this.turnLeft();
+		this.move();
+
+	}
+
+	public void reEast() {
+		// TODO Auto-generated method stub
+		this.pickThing();
+		this.turnRight();
+		this.move();
+		this.turnRight();
+		this.move();
+	}
+
+	public void putRow(int s) {
+		// TODO Auto-generated method stub
+		for (int i =0;i<s;i++) {
+			this.putThing();
+			this.move();
+			this.move();
+		}	
+	}
+	
+	public void resouthR() {
+		// TODO Auto-generated method stub
+		this.turnRight();
+		this.move();
+		this.turnRight();
+		this.move();
+		this.move();
+		this.move();
+
+
+	}
+
+	public void resouthL() {
+		this.turnLeft();
+		this.move();
+		this.turnLeft();
+		this.move();
+		this.move();
+		this.move();
+
+	}
+
+	public void move5() {
+		// TODO Auto-generated method stub
+		this.move();
+		this.move();
+		this.move();
+		this.move();
+		this.move();
+	}
+
+	public void turnBack() {
+		// TODO Auto-generated method stub
+		this.pickThing();
+		this.turnLeft();
+		this.turnLeft();
+		
+	}
+
+}
